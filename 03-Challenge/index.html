@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Real-time Form Input Display 📋</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Real-time Form Input Display 📋</h1>
+
+    <div class="container">
+      <div class="form-section">
+        <h2>Profile Form</h2>
+        <form id="profileForm">
+          <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" />
+          </div>
+
+          <div class="form-group">
+            <label for="jobTitle">Job Title:</label>
+            <input type="text" id="jobTitle" name="jobTitle" />
+          </div>
+
+          <div class="form-group">
+            <label for="age">Age:</label>
+            <input type="number" id="age" name="age" min="0" />
+          </div>
+
+          <div class="form-group">
+            <label for="bio">Bio:</label>
+            <textarea id="bio" name="bio"></textarea>
+          </div>
+        </form>
+      </div>
+
+      <div class="preview-section">
+        <h2>Profile Preview</h2>
+
+        <div class="preview-item">
+          <div class="preview-label">Name:</div>
+          <div id="namePreview" class="preview-value not-provided">
+            Not provided
+          </div>
+        </div>
+
+        <div class="preview-item">
+          <div class="preview-label">Job Title:</div>
+          <div id="jobTitlePreview" class="preview-value not-provided">
+            Not provided
+          </div>
+        </div>
+
+        <div class="preview-item">
+          <div class="preview-label">Age:</div>
+          <div id="agePreview" class="preview-value not-provided">
+            Not provided
+          </div>
+        </div>
+
+        <div class="preview-item">
+          <div class="preview-label">Bio:</div>
+          <div id="bioPreview" class="preview-value not-provided">
+            Not provided
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
