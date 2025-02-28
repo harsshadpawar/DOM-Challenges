@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Challenge 4 - Task Management 🧏🏻‍♂️</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>Challenge 4 - Task Management 🧏🏻‍♂️</h1>
+        <p>Organize, track, and accomplish your tasks</p>
+      </header>
+
+      <div class="task-input-container">
+        <input type="text" id="taskInput" placeholder="Add a new task..." />
+        <button id="addTaskBtn">Add</button>
+      </div>
+
+      <div class="task-stats">
+        <div class="stat total-stat">
+          <span>Total Tasks</span>
+          <span id="totalTasks" class="stat-count">0</span>
+        </div>
+        <div class="stat completion-stat">
+          <span>Completed</span>
+          <span id="completedTasks" class="stat-count">0</span>
+        </div>
+      </div>
+
+      <div class="task-list-container">
+        <div id="noTasksMessage" class="no-tasks-message">
+          No tasks yet. Add one above!
+        </div>
+        <ul id="taskList" class="task-list">
+          <!-- Tasks will be added here dynamically -->
+        </ul>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
