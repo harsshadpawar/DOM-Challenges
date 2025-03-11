@@ -1,0 +1,273 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  color: #333;
+}
+
+.container {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 40px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  overflow: hidden;
+  width: 90%;
+  max-width: 600px;
+  transition: all 0.3s ease;
+}
+
+.container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.title {
+  text-align: center;
+  color: white;
+  margin-bottom: 20px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.clock-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ANALOG CLOCK STYLES */
+.analog-clock {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  margin-bottom: 30px;
+}
+
+.clock-face {
+  width: 100%;
+  height: 100%;
+  background-color: #f5f5f5;
+  border-radius: 50%;
+  position: relative;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.2), inset 0 0 10px rgba(0, 0, 0, 0.1);
+  border: 8px solid rgba(255, 255, 255, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.number {
+  position: absolute;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #333;
+  transform-origin: 50% 50%;
+}
+
+/* Positioning clock numbers in a circle */
+.number-1 {
+  top: 40px;
+  right: 95px;
+}
+.number-2 {
+  top: 90px;
+  right: 55px;
+}
+.number-3 {
+  top: 140px;
+  right: 35px;
+}
+.number-4 {
+  top: 190px;
+  right: 55px;
+}
+.number-5 {
+  top: 235px;
+  right: 95px;
+}
+.number-6 {
+  bottom: 15px;
+  left: 130px;
+}
+.number-7 {
+  top: 235px;
+  left: 95px;
+}
+.number-8 {
+  top: 190px;
+  left: 55px;
+}
+.number-9 {
+  top: 140px;
+  left: 35px;
+}
+.number-10 {
+  top: 90px;
+  left: 45px;
+}
+.number-11 {
+  top: 40px;
+  left: 95px;
+}
+.number-12 {
+  top: 25px;
+  left: 130px;
+}
+
+.tick-marks {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.tick-marks::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: repeating-conic-gradient(
+    from 0deg,
+    transparent 0deg 6deg,
+    rgba(0, 0, 0, 0.1) 6deg 6.5deg
+  );
+  opacity: 0.5;
+}
+
+.hand {
+  position: absolute;
+  bottom: 50%;
+  left: 50%;
+  transform-origin: 50% 100%;
+  transform: translateX(-50%) rotate(0deg);
+  border-radius: 10px;
+  z-index: 1;
+}
+
+.hour-hand {
+  width: 8px;
+  height: 25%;
+  background-color: #333;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.minute-hand {
+  width: 5px;
+  height: 38%;
+  background-color: #555;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.second-hand {
+  width: 2px;
+  height: 45%;
+  background-color: #e63946;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.center-dot {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 14px;
+  height: 14px;
+  background-color: #e63946;
+  border: 2px solid #333;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+/* DIGITAL SECTION STYLES */
+.digital-section {
+  background-color: rgba(0, 0, 0, 0.8);
+  border-radius: 10px;
+  padding: 20px 40px;
+  text-align: center;
+  width: 100%;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.digital-section:hover {
+  transform: scale(1.02);
+}
+
+.digital-time {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 10px;
+  letter-spacing: 2px;
+  text-shadow: 0 0 10px rgba(230, 57, 70, 0.5);
+}
+
+.date {
+  font-size: 1.2rem;
+  color: #ccc;
+  letter-spacing: 1px;
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+  .container {
+    width: 95%;
+    padding: 20px;
+  }
+
+  .title {
+    font-size: 1.5rem;
+  }
+
+  .analog-clock {
+    width: 240px;
+    height: 240px;
+  }
+
+  .number {
+    font-size: 1.2rem;
+  }
+
+  .digital-time {
+    font-size: 2.2rem;
+  }
+
+  .date {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .analog-clock {
+    width: 200px;
+    height: 200px;
+  }
+
+  .number {
+    font-size: 1rem;
+  }
+
+  .digital-time {
+    font-size: 1.8rem;
+    letter-spacing: 1px;
+  }
+
+  .digital-section {
+    padding: 15px 20px;
+  }
+}
